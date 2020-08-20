@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Oreo Stacker!</title>
+</head>
+<body>
+    <h1>Create Your Stack!</h1>
+    <div id="current"><span id="ph">Your stack will appear here</span></div>
+    <div class="val">
+        <button onclick="clicked('o');">O</button>
+        <button onclick="clicked('re');">Re</button>
+        <button onclick="clicked('&');">&</button>
+    </div>
+    <div class="ed">
+        <button onclick="clicked('Back');">Delete</button>
+        <button onclick="clicked('Clear');">Clear</button>
+        <button disabled id="generate" onclick="generate();">Generate!</button>
+    </div>
+    
+    <div class="displayspace clearfix" id="displayspace">
+        
+    </div>
+</body>
+</html>
+
+<script src="script.js"></script>
