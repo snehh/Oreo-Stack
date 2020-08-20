@@ -36,21 +36,24 @@ clicked = (item) => {
 generate = () => {
     document.getElementById('displayspace').innerHTML = ''
     if(currentStack.length !== 0){
-        console.log(currentStack)
 
         var div = document.createElement('div');
         div.classList.add('stackdiv')
+        div.id='stackdiv'
+        var attarr = `height: ${(currentStack.length + 1)*30}px; grid-template-rows: 1fr`;
         for(var i=0; i< currentStack.length; i++){
             var img = document.createElement('img')
             if(currentStack[i] === 'o')
                 img.setAttribute('src', 'o.gif')
             else if(currentStack[i] === 're')
                 img.setAttribute('src', 're.gif')
-            img.setAttribute('style', `top: ${10*(i+1)}px; z-index: ${currentStack.length-i};`)
+            img.setAttribute('style', `grid-row-start: ${i+1}; grid-row-end: ${i+3}; grid-column-start: 1; z-index: ${currentStack.length-i};`)
+            attarr = attarr + ' 1fr'
             div.append(img)
         }
-        
+        div.setAttribute('style', `${attarr};`)
         document.getElementById('displayspace').append(div)
+        
     }
     
 }
